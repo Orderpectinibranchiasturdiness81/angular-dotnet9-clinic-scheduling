@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Scheduling.Domain.Context;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("ConnectionString");
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddCors(corsOptions => {
     corsOptions.AddPolicy("policy",
