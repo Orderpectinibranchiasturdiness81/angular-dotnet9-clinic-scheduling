@@ -1,13 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Scheduling.Domain.Entity;
-using System.Reflection;
+using Scheduling.Domain.EntitiesConfigurations;
 
 namespace Scheduling.Domain.Context
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<UserProfile> UserProfiles { get; set; }
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
@@ -15,7 +12,15 @@ namespace Scheduling.Domain.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.AddModelBuilderConfigrations();
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+
+            // Enable Lazy Loading
+            optionsBuilder.UseLazyLoadingProxies();
         }
     }
 }
