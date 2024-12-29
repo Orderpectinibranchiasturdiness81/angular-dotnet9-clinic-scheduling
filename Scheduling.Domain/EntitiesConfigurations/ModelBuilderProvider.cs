@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace ModuleName.Infra.ProvidersConfigurations.RDB
+namespace Scheduling.Domain.EntitiesConfigurations
 {
     public static class ModelBuilderProvider
     {
-        internal static void AddModelBuilderConfigrations(this ModelBuilder modelBuilder)
+        public static void AddModelBuilderConfigrations(this ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }

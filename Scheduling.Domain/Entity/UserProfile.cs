@@ -21,6 +21,20 @@ namespace Scheduling.Domain.Entity
 
         //-----------------------------------------------------------------**
 
+        public void Update(string nameAr, string nameEn, string phoneNumber, string? description = null)
+        {
+            Validate(nameAr, nameEn, phoneNumber);
+            NameAr = nameAr;
+            NameEn = nameEn;
+            PhoneNumber = phoneNumber;
+            Description = description;
+        }
+
+        public void Delete()
+        {
+            IsDeleted = true;
+        }
+
         private void Validate(string nameAr, string nameEn, string phoneNumber)
         {
             if (string.IsNullOrWhiteSpace(nameAr))
