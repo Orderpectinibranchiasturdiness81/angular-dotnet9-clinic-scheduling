@@ -39,6 +39,7 @@ var app = builder.Build();
 
 // Use the middleware
 app.UseMiddleware<SaveChangesMiddleware>();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // 3. Configure the HTTP request pipeline
 
