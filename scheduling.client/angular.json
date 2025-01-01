@@ -1,109 +1,123 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "projects",
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json", // مسار مخطط التحقق من صحة الملف
+  "version": 1, // إصدار مخطط Angular CLI
+  "newProjectRoot": "projects", // المجلد الافتراضي لإنشاء مشاريع جديدة
   "projects": {
-    "scheduling.client": {
-      "projectType": "application",
-      "schematics": {
+    "scheduling.client": { // تعريف المشروع الخاص بك
+      "projectType": "application", // نوع المشروع (تطبيق)
+      "schematics": { // إعدادات التخطيط الافتراضي
         "@schematics/angular:component": {
-          "standalone": false
+          "standalone": false // عدم استخدام المكونات المستقلة افتراضياً
         },
         "@schematics/angular:directive": {
-          "standalone": false
+          "standalone": false // عدم استخدام التوجيهات المستقلة افتراضياً
         },
         "@schematics/angular:pipe": {
-          "standalone": false
+          "standalone": false // عدم استخدام الأنابيب المستقلة افتراضياً
         }
       },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
+      "root": "", // المجلد الجذري للمشروع
+      "sourceRoot": "src", // مجلد الكود المصدر
+      "prefix": "app", // البادئة الافتراضية للمكونات
       "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:application",
+        "build": { // إعدادات بناء المشروع
+          "builder": "@angular-devkit/build-angular:application", // نوع الأداة المستخدمة للبناء
           "options": {
-            "outputPath": "dist/scheduling.client",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
+            "outputPath": "dist/scheduling.client", // مسار الملفات الناتجة بعد البناء
+            "index": "src/index.html", // ملف HTML الرئيسي
+            "browser": "src/main.ts", // نقطة دخول التطبيق
             "polyfills": [
-              "zone.js"
+              "zone.js" // ملفات التوافق التي تحتاجها Angular
             ],
-            "tsConfig": "tsconfig.app.json",
-            "assets": [
+            "tsConfig": "tsconfig.app.json", // ملف تكوين TypeScript
+            "assets": [ // الملفات الثابتة التي سيتم نسخها
               {
-                "glob": "**/*",
-                "input": "public"
+                "glob": "**/*", // نسخ جميع الملفات
+                "input": "public" // مصدر الملفات
+              },
+              {
+                "glob": "**/*", // نسخ جميع الملفات
+                "input": "src/assets", // مجلد assets المصدر
+                "output": "assets" // وجهة النسخ في المجلد الناتج
               }
             ],
-            "styles": [
+            "styles": [ // ملفات الأنماط للاختبارات
               "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css", // Add bootstrap CSS here
               "node_modules/ngx-toastr/toastr.css" // Add toastr CSS here
             ],
-            "scripts": []
+            "scripts": [ // ملفات JavaScript الإضافية للاختبارات
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" // Add bootstrap Scripts
+            ]
           },
-          "configurations": {
-            "production": {
-              "budgets": [
+          "configurations": { // إعدادات إضافية
+            "production": { // إعدادات خاصة بالإصدار النهائي (Production)
+              "budgets": [ // حدود حجم الملفات
                 {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "type": "initial", // الحد لحجم البند الأولي
+                  "maximumWarning": "500kB", // إصدار تحذير إذا تجاوز الحجم 500KB
+                  "maximumError": "1MB" // إصدار خطأ إذا تجاوز الحجم 1MB
                 },
                 {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "type": "anyComponentStyle", // حد لأنماط أي مكون
+                  "maximumWarning": "4kB", // تحذير إذا تجاوز الحجم 4KB
+                  "maximumError": "8kB" // خطأ إذا تجاوز الحجم 8KB
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all" // إضافة تجزئة إلى أسماء الملفات لتحسين التخزين المؤقت
             },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
+            "development": { // إعدادات خاصة ببيئة التطوير
+              "optimization": false, // عدم تحسين الملفات
+              "extractLicenses": false, // عدم استخراج تراخيص الأطراف الخارجية
+              "sourceMap": true // تفعيل خرائط المصدر
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production" // الإعداد الافتراضي للبناء
         },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+        "serve": { // إعدادات تشغيل الخادم
+          "builder": "@angular-devkit/build-angular:dev-server", // أداة تشغيل الخادم
           "configurations": {
-            "production": {
-              "buildTarget": "scheduling.client:build:production"
+            "production": { // إعدادات الخادم في بيئة الإنتاج
+              "buildTarget": "scheduling.client:build:production" // البناء باستخدام إعدادات الإنتاج
             },
-            "development": {
-              "buildTarget": "scheduling.client:build:development"
+            "development": { // إعدادات الخادم في بيئة التطوير
+              "buildTarget": "scheduling.client:build:development" // البناء باستخدام إعدادات التطوير
             }
           },
-          "defaultConfiguration": "development",
+          "defaultConfiguration": "development", // الإعداد الافتراضي للتشغيل
           "options": {
-            "proxyConfig": "src/proxy.conf.js",
-            "port": 52871
+            "proxyConfig": "src/proxy.conf.js", // إعداد الوكيل (Proxy)
+            "port": 52871 // رقم المنفذ لتشغيل الخادم
           }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+        "test": { // إعدادات تشغيل الاختبارات
+          "builder": "@angular-devkit/build-angular:karma", // أداة الاختبار
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
+              "zone.js", // ملفات التوافق
+              "zone.js/testing" // ملفات التوافق الخاصة بالاختبار
             ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
+            "tsConfig": "tsconfig.spec.json", // ملف إعداد TypeScript للاختبارات
+            "assets": [ // الملفات الثابتة للاختبارات
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
-            "styles": [
-              "src/styles.css"
+            "styles": [ // ملفات الأنماط للاختبارات
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css", // Add bootstrap CSS here
+              "node_modules/ngx-toastr/toastr.css" // Add toastr CSS here
             ],
-            "scripts": [],
-            "karmaConfig": "karma.conf.js"
+            "scripts": [ // ملفات JavaScript الإضافية للاختبارات
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" // Add bootstrap Scripts
+            ],
+            "karmaConfig": "karma.conf.js" // إعداد Karma
           }
         }
       }

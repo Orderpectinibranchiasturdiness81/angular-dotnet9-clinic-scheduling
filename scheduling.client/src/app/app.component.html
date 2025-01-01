@@ -1,9 +1,18 @@
 
+
 <app-spinner></app-spinner>
 <router-outlet></router-outlet>
 
 
 <h1 id="tableLabel">Weather forecast</h1>
+
+<div class="container mt-5 bg-primary">
+  <h1>{{ 'general.hello' | translate }}</h1>
+  <p>{{ 'general.welcomeToOurApp' | translate }}</p>
+
+  <button (click)="switchLanguage('en')">English</button>
+  <button (click)="switchLanguage('ar')">العربية</button>
+</div>
 
 <p>This component demonstrates fetching data from the server.</p>
 

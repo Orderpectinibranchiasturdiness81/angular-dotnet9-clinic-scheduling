@@ -26,7 +26,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     return next(clonedRequest).pipe(
       finalize(() => spinnerloadingService.hide()), // Hide spinner when the request completes (success or failure)
       catchError((error) => {
-        debugger
         // Show an error notification
         toastr.error(error.error || 'An error occurred while processing the request')
         return throwError(() => error);

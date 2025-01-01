@@ -31,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,   
     ReactiveFormsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     SpinnerComponent,
     ToastrModule,
   ]
