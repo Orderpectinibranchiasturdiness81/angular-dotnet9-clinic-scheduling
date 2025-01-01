@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
+
+
 
 @NgModule({
   declarations: [
@@ -14,8 +15,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,  // For template-driven forms
     ReactiveFormsModule,  // For reactive forms
-    BrowserModule,
-    BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({ // ToastrModule added
       timeOut: 20000, // Sets the duration of the toast to 20 seconds
       extendedTimeOut: 1000, // Keeps the toast for an additional second when hovering over it
@@ -25,15 +24,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       newestOnTop: true, // Display the newest toasts at the top
       tapToDismiss: true, // Allow tapping to dismiss the toast
     }),
+    TranslateModule
   ],
   exports: [
     CommonModule,
-    FormsModule,   
+    FormsModule,
     ReactiveFormsModule,
-    BrowserModule,
-    BrowserAnimationsModule,
     SpinnerComponent,
     ToastrModule,
+    TranslateModule
   ]
 })
 export class SharedModule { }

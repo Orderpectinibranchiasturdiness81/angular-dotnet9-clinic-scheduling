@@ -1,11 +1,5 @@
 
 
-<app-spinner></app-spinner>
-<router-outlet></router-outlet>
-
-
-<h1 id="tableLabel">Weather forecast</h1>
-
 <div class="container mt-5 bg-primary">
   <h1>{{ 'general.hello' | translate }}</h1>
   <p>{{ 'general.welcomeToOurApp' | translate }}</p>
@@ -14,25 +8,15 @@
   <button (click)="switchLanguage('ar')">العربية</button>
 </div>
 
-<p>This component demonstrates fetching data from the server.</p>
+<app-spinner></app-spinner>
 
-<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+<div class="row">
+  <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+    <app-menu></app-menu>
+  </div>
+  <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 
-<table *ngIf="forecasts">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
-    </tr>
-  </tbody>
-</table>
+

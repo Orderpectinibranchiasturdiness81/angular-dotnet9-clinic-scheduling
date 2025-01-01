@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 col-lg-2 p-0 bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li *ngFor="let item of menuItems" class="nav-item" [ngClass]="{'dropdown': item.children.length > 0}">
+
+            <!-- Main menu item (no link for items with children) -->
+            <a *ngIf="item.children.length === 0" class="nav-link" [routerLink]="item.url" [attr.href]="item.url">
+              <i *ngIf="item.icon" class="{{item.icon}}"></i> <b>{{ item.name }}</b>
+            </a>
+
+            <!-- Main menu item for items with children (no link) -->
+            <a *ngIf="item.children.length > 0" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="collapse" [attr.aria-expanded]="isOpen(item)" (click)="toggleDropdown(item)">
+              <i *ngIf="item.icon" class="{{item.icon}}"></i> <b>{{ item.name }}</b>
+            </a>
+
+            <!-- Dropdown menu items -->
+            <div *ngIf="item.children.length > 0" [ngClass]="{'collapse': !item.open, 'collapse.show': item.open}">
+              <ul class="nav flex-column ms-3">
+                <li *ngFor="let child of item.children">
+                  <a class="nav-link" [routerLink]="child.url">
+                    <i *ngIf="child.icon" class="{{child.icon}}"></i> {{ child.name }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="col-md-9 ms-sm-auto col-lg-10 px-4">
+      <!-- Add your main content here -->
+    </div>
+  </div>
+</div>

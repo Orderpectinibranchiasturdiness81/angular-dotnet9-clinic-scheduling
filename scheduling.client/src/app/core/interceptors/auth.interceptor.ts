@@ -10,18 +10,19 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const toastr = inject(ToastrService); // Inject ToastrService
 
   const token = localStorage.getItem('token') ?? ''; // Retrieve the token from Local Storage or any other source
+  const lang = localStorage.getItem('lang') ?? 'en';
 
   spinnerloadingService.show(); // Show spinner
 
   if (token || true) {
 
     // Clone the request and add the Authorization header with the token
-    //const clonedRequest = req.clone({
-    //  setHeaders: {
-    //    Authorization: `Bearer ${token}`, // Add the Bearer token to the request headers
-    //  },
-    //});
-    const clonedRequest = req.clone();
+    const clonedRequest = req.clone({
+      setHeaders: {
+        Authorization: `Bearer ${token}`, // Add the Bearer token to the request headers
+        'Accept-Language': lang 
+      },
+    });
 
     return next(clonedRequest).pipe(
       finalize(() => spinnerloadingService.hide()), // Hide spinner when the request completes (success or failure)

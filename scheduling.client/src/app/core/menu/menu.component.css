@@ -1,0 +1,41 @@
+/* Sidebar styles */
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #ddd;
+}
+
+.nav-link {
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #495057;
+  display: flex;
+  align-items: center;
+}
+
+  .nav-link i {
+    margin-right: 10px; /* Space between icon and text */
+  }
+
+  .nav-link:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+  }
+
+/*.dropdown-toggle::after {
+  content: ' ▼';
+}*/
+
+/* Submenu (children) */
+.nav-item .collapse {
+  margin-left: 20px;
+}
+
+.sidebar-sticky {
+  position: sticky;
+  top: 0;
+}
