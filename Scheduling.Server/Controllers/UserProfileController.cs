@@ -24,7 +24,7 @@ namespace Scheduling.Server.Controllers
             return await _service.Search(searchPageDto);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<UserProfileResponse> GetById(int id)
         {
             return await _service.GetById(id);
@@ -42,7 +42,7 @@ namespace Scheduling.Server.Controllers
             await _service.Update(request);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task Delete(int id)
         {
             await _service.Delete(id);
