@@ -46,6 +46,13 @@ export class MenuComponent implements OnInit {
           { name: 'General', url: '/settings/general', children: [] },
           { name: 'Security', url: '/settings/security', children: [] }
         ]
+      },
+      {
+        name: 'User Profiles',
+        icon: 'fa fa-cogs',
+        children: [
+          { name: 'Search User Profiles', url: '/user-profile', children: [] },
+        ]
       }
     ];
   }

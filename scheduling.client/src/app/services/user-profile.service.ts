@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { ControllerNames } from '../models/controller-names';
 import { SearchPageDto } from '../models/search-page-dto';
-import { UserProfileModel } from '../models/user-profile/user-profile-model';
+import { UserProfileFilter, UserProfileModel } from '../models/user-profile/user-profile-model';
 import { PagedDataDto } from '../models/paged-data-dto';
 import { Observable } from 'rxjs';
 
@@ -14,7 +14,7 @@ export class UserProfileService {
   URL_API: string = `${environment.apiUrl}${ControllerNames.UserProfile}`;
   constructor(private http: HttpClient) { }
   //-----------------------------------------------**
-  search(model: SearchPageDto<UserProfileModel>): Observable<PagedDataDto<UserProfileModel>> {
+  search(model: SearchPageDto<UserProfileFilter>): Observable<PagedDataDto<UserProfileModel>> {
     return this.http.post<PagedDataDto<UserProfileModel>>(`${this.URL_API}/search`, model)
   }
 

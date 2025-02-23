@@ -17,12 +17,13 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   if (token || true) {
 
     // Clone the request and add the Authorization header with the token
-    const clonedRequest = req.clone({
-      setHeaders: {
-        Authorization: `Bearer ${token}`, // Add the Bearer token to the request headers
-        'Accept-Language': lang 
-      },
-    });
+    //const clonedRequest = req.clone({
+    //  setHeaders: {
+    //    Authorization: `Bearer ${token}`, // Add the Bearer token to the request headers
+    //    'Accept-Language': lang 
+    //  },
+    //});
+    const clonedRequest = req.clone();
 
     return next(clonedRequest).pipe(
       finalize(() => spinnerloadingService.hide()), // Hide spinner when the request completes (success or failure)

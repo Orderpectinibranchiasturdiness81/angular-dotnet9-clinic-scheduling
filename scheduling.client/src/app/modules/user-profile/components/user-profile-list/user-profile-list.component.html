@@ -1,3 +1,29 @@
-<p>user-profile-list works!</p>
-<h1>{{ 'general.hello' | translate }}</h1>
-<p>{{ 'general.welcomeToOurApp' | translate }}</p>
+<div>
+  <div>
+
+  </div>
+  <div>
+    <div class="table-responsive">
+      <table class="table table-sm table-hover text-nowrap text-break">
+        <thead>
+          <tr>
+            <th>{{ 'general.name' | translate }}</th>
+            <th>{{ 'general.description' | translate }}</th>
+            <th>{{ 'general.phoneNumber' | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of result.data">
+            <td>{{(isEnglishLang() ? item.nameEn : item.nameAr) ?? '--'}}</td>
+            <td>{{item.description ?? '--'}}</td>
+            <td>{{item.phoneNumber ?? '--'}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <app-pagination [totalCount]="result.totalCount"
+                      [pageIndex]="filteredCriteria.pageIndex"
+                      [pageSize]="filteredCriteria.pageSize">
+      </app-pagination>
+    </div>
+  </div>
+</div>
