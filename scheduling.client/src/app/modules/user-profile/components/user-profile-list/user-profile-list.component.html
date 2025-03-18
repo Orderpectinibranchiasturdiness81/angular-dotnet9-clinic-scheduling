@@ -1,7 +1,5 @@
-<div>
-  <div>
+<div class="form-box">
 
-  </div>
   <div>
     <div class="table-responsive">
       <table class="table table-sm table-hover text-nowrap text-break">
@@ -14,9 +12,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let item of result.data">
-            <td>{{(isEnglishLang() ? item.nameEn : item.nameAr) ?? '--'}}</td>
-            <td>{{item.description ?? '--'}}</td>
-            <td>{{item.phoneNumber ?? '--'}}</td>
+            <td>{{ isEnglishLang() ? item.nameEn : item.nameAr }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.phoneNumber }}</td>
           </tr>
         </tbody>
       </table>
@@ -26,4 +24,5 @@
       </app-pagination>
     </div>
   </div>
+
 </div>
