@@ -52,7 +52,6 @@ export class MenuComponent implements OnInit {
         icon: 'fa fa-cogs',
         children: [
           { name: 'Search User Profiles', url: '/user-profile', children: [] },
-          { name: 'Add User Profiles', url: '/user-profile/manage', children: [] },
         ]
       }
     ];
