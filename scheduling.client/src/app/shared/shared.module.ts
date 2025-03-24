@@ -5,13 +5,15 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { SummernoteDirective } from './directives/summernote.directive';
 
 
 
 @NgModule({
   declarations: [
     SpinnerComponent,
-    PaginationComponent
+    PaginationComponent,
+    SummernoteDirective
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     ReactiveFormsModule,
     SpinnerComponent,
     PaginationComponent,
+    SummernoteDirective,
     ToastrModule,
     TranslateModule
   ]

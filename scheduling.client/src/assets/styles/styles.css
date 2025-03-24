@@ -1,19 +1,79 @@
 /* Importing variables from the variables.css file */
 @import './variables.css';
 
-/* Styling for the .form-box class */
-.form-box {
-  border: 2px solid var(--primary-color); /* Set the border color to the primary color from variables */
-  border-radius: 25px; /* Rounded corners with a radius of 25px */
-  padding: 20px; /* Add padding inside the container */
-  background-color: var(--background-color); /* Set background color from variables */
+/* Container styling - similar to: shadow p-3 mb-5 rounded bg-info */
+.card-container {
+  border: 2px solid var(--primary-color); /* Border color set from primary color variable */
+  background-color: var(--background-color) !important; /* Background color set from variable */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important; /* Adding shadow with soft blur */
+  border-radius: 8px !important; /* Rounded corners */
+  padding: 16px !important; /* Padding inside the container */
+  margin-bottom: 48px !important; /* Space below the container */
 }
 
-  .form-box label {
-    text-align: left;
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+/* Header styling - similar to: shadow-sm p-3 mb-5 bg-body rounded text-left */
+.card-header {
+  background-color: white !important; /* Header background is white */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075) !important; /* Soft shadow for the header */
+  border-radius: 8px !important; /* Rounded corners for the header */
+  padding: 16px !important; /* Padding inside the header */
+  margin-bottom: 48px !important; /* Space below the header */
+  text-align: left !important; /* Align header text to the left */
+}
+
+/* Body styling - similar to: shadow-sm p-3 mb-5 bg-body rounded */
+.card-body {
+  background-color: white !important; /* Body background is white */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075) !important; /* Soft shadow for the body */
+  border-radius: 8px !important; /* Rounded corners for the body */
+  padding: 16px !important; /* Padding inside the body */
+  margin-bottom: 48px !important; /* Space below the body */
+}
+
+/* Styling for form labels */
+form label {
+  text-align: left !important; /* Align label text to the left */
+  display: block !important; /* Ensure labels are block elements */
+  margin-bottom: 8px !important; /* Add space below the label */
+  font-weight: bold !important; /* Make labels bold */
+}
+
+/* Add a red asterisk for required fields */
+.required::after {
+  content: " *" !important; /* Add asterisk to the label */
+  color: red !important; /* Set a red color for the asterisk */
+  font-weight: bold !important; /* Make the asterisk bold */
+}
+
+/* Styling for buttons container */
+.button-action {
+  display: flex !important; /* Use flexbox for layout */
+  justify-content: flex-end !important; /* Align buttons to the right */
+  gap: 8px !important; /* Add space between buttons */
+}
+
+/* Styling for primary buttons */
+.btn-primary {
+  background-color: var(--primary-color) !important; /* Set primary button background color */
+  border-radius: 25px !important; /* Rounded corners for the button */
+}
+
+  /* Hover effect for primary button */
+  .btn-primary:hover {
+    background-color: #0069d9 !important; /* Darker shade for hover effect */
+  }
+
+/* Styling for outline primary buttons */
+.btn-outline-primary {
+  background-color: transparent !important; /* Transparent background */
+  color: var(--primary-color) !important; /* Primary color for text */
+  border-radius: 25px !important; /* Rounded corners for the outline button */
+}
+
+  /* Hover effect for outline primary button */
+  .btn-outline-primary:hover {
+    background-color: var(--primary-color) !important; /* Primary color as background on hover */
+    color: #fff !important; /* White text on hover */
   }
 
 /* Remove the blue outline on focus */
@@ -21,8 +81,8 @@ form input:focus,
 form select:focus,
 form textarea:focus,
 form button:focus {
-  box-shadow: none !important; /* Remove the default focus shadow */
-  border-color: inherit; /* Inherit the border color from the parent element */
+  box-shadow: none !important; /* Remove default focus shadow */
+  border-color: inherit !important; /* Inherit border color */
 }
 
 /* Styling for required fields that are invalid */
@@ -30,13 +90,12 @@ form input:required:invalid,
 form select:required:invalid,
 form textarea:required:invalid,
 form button:required:invalid {
-  border-color: rgba(220, 53, 69, 0.6) !important; /* Set a red border color when the field is invalid */
+  border-color: rgba(220, 53, 69, 0.6) !important; /* Red border color for invalid fields */
 }
 
 /* Styling for required fields that are valid */
 form input:required:valid,
 form select:required:valid,
 form textarea:required:valid {
-  border-color: rgba(40, 167, 69, 0.6); /* Set a green border color when the field is valid */
+  border-color: rgba(40, 167, 69, 0.6) !important; /* Green border color for valid fields */
 }
-

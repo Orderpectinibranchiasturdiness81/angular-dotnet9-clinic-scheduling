@@ -42,12 +42,16 @@
               }
             ],
             "styles": [ // ملفات الأنماط للاختبارات
-              "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css", // Add bootstrap CSS here
-              "node_modules/ngx-toastr/toastr.css" // Add toastr CSS here
+              "node_modules/summernote/dist/summernote-bs4.min.css",
+              "node_modules/ngx-toastr/toastr.css", // Add toastr CSS here
+              "src/styles.css"
             ],
             "scripts": [ // ملفات JavaScript الإضافية للاختبارات
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" // Add bootstrap Scripts
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/summernote/dist/summernote-bs4.min.js"
             ]
           },
           "configurations": { // إعدادات إضافية
@@ -88,36 +92,6 @@
           "options": {
             "proxyConfig": "src/proxy.conf.js", // إعداد الوكيل (Proxy)
             "port": 52871 // رقم المنفذ لتشغيل الخادم
-          }
-        },
-        "test": { // إعدادات تشغيل الاختبارات
-          "builder": "@angular-devkit/build-angular:karma", // أداة الاختبار
-          "options": {
-            "polyfills": [
-              "zone.js", // ملفات التوافق
-              "zone.js/testing" // ملفات التوافق الخاصة بالاختبار
-            ],
-            "tsConfig": "tsconfig.spec.json", // ملف إعداد TypeScript للاختبارات
-            "assets": [ // الملفات الثابتة للاختبارات
-              {
-                "glob": "**/*",
-                "input": "public"
-              },
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "assets"
-              }
-            ],
-            "styles": [ // ملفات الأنماط للاختبارات
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css", // Add bootstrap CSS here
-              "node_modules/ngx-toastr/toastr.css" // Add toastr CSS here
-            ],
-            "scripts": [ // ملفات JavaScript الإضافية للاختبارات
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" // Add bootstrap Scripts
-            ],
-            "karmaConfig": "karma.conf.js" // إعداد Karma
           }
         }
       }
