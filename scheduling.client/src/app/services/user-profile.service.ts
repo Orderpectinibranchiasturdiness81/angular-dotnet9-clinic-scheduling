@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserProfileService {
-  URL_API: string = `${environment.apiUrl}${ControllerNames.UserProfile}`;
+  URL_API: string = `${environment.server_URL}${ControllerNames.UserProfile}`;
   constructor(private http: HttpClient) { }
   //-----------------------------------------------**
   search(model: SearchPageDto<UserProfileFilter>): Observable<PagedDataDto<UserProfileModel>> {

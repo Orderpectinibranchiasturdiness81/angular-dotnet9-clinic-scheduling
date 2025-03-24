@@ -60,11 +60,11 @@ if (app.Environment.IsDevelopment())
     }
 
     // OpenAPI mapping
-    // https://localhost:7131/openapi/v1.json
+    // https://localhost:8200/openapi/v1.json
     app.MapOpenApi();
 
     // Swagger UI
-    // https://localhost:7131/swagger/index.html
+    // https://localhost:8200/swagger/index.html
     app.UseSwagger(); 
     app.UseSwaggerUI();
 

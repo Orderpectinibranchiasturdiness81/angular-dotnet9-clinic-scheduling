@@ -91,7 +91,7 @@
           "defaultConfiguration": "development", // الإعداد الافتراضي للتشغيل
           "options": {
             "proxyConfig": "src/proxy.conf.js", // إعداد الوكيل (Proxy)
-            "port": 52871 // رقم المنفذ لتشغيل الخادم
+            "port": 4200 // رقم المنفذ لتشغيل الخادم
           }
         }
       }
