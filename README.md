@@ -14,4 +14,4 @@ Key features include:
 
 + Admin Dashboard: Clinic admins can manage all appointments, monitor patient activity, and generate reports on scheduling trends.
 
-Technologies used: ASP.NET Core Web API, C#, JavaScript, HTML, CSS, Bootstrap, Angular, SQL Database.
+Technologies used: ASP.NET Core Web API, C#, TypeScript, HTML, CSS, Bootstrap, Angular, SQL Database.
