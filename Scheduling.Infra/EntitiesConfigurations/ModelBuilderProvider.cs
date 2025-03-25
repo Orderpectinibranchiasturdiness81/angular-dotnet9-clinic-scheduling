@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace Scheduling.Domain.EntitiesConfigurations
+namespace Scheduling.Infra.EntitiesConfigurations
 {
     public static class ModelBuilderProvider
     {

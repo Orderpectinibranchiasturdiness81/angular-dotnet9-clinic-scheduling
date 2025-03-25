@@ -1,6 +1,6 @@
 ﻿using Common;
 using Microsoft.EntityFrameworkCore;
-using Scheduling.Domain.Context;
+using Scheduling.Infra.Context;
 using Scheduling.Domain.IRepositories;
 using System.Linq.Expressions;
 using Scheduling.Domain.Models;

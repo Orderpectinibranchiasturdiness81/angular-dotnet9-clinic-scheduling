@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Scheduling.Domain.Context;
+using Scheduling.Infra.Context;
 
-namespace Scheduling.Infra.Middlewares
+namespace Scheduling.Server.Middlewares
 {
     public class SaveChangesMiddleware
     {

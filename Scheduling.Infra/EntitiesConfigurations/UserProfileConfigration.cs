@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Scheduling.Domain.Entity;
 
-namespace Scheduling.Domain.EntitiesConfigurations
+namespace Scheduling.Infra.EntitiesConfigurations
 {
     public class UserProfileConfigration : IEntityTypeConfiguration<UserProfile>
     {

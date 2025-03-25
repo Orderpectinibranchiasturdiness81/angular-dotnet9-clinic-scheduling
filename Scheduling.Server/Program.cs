@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Scheduling.Domain.Context;
+using Scheduling.Infra.Context;
 using Scheduling.Infra;
-using Scheduling.Infra.Middlewares;
+using Scheduling.Server.Middlewares;
 
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using System.Net;
-using Newtonsoft.Json;
+﻿using System.Net;
 
-namespace Scheduling.Infra.Middlewares
+namespace Scheduling.Server.Middlewares
 {
     public class ExceptionHandlingMiddleware
     {

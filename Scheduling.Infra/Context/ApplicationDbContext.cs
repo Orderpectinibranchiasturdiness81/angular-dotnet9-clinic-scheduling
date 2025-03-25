@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Scheduling.Domain.EntitiesConfigurations;
+using Scheduling.Infra.EntitiesConfigurations;
 
-namespace Scheduling.Domain.Context
+namespace Scheduling.Infra.Context
 {
     public class ApplicationDbContext : DbContext
     {
